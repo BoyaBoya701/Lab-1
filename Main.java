@@ -46,35 +46,42 @@ public class Main {
 
         // ArrayList add First
         long time7 = System.currentTimeMillis();
+        for (int i = 0; i < 1000; i++)
         arrayList.add(0,(int) (Math.random() * count));
         System.out.printf("ArrayList add First :%d|", System.currentTimeMillis() - time7);
 
         // LinkedList add.First
         long time8 = System.currentTimeMillis();
+        for (int i = 0; i < 1000; i++)
         linkedList.add(0,(int) (Math.random() * count));
         System.out.printf("LinkedList add First :%d|", System.currentTimeMillis() - time8);
 
         // ArrayList add in the end
         long time9 = System.currentTimeMillis();
+        for (int i = 0; i < 1000; i++)
         arrayList.add(count-1,(int) (Math.random() * count));
         System.out.printf("ArrayList add in the end :%d|", System.currentTimeMillis() - time9);
 
         // LinkedList add in the end
         long time10 = System.currentTimeMillis();
+        for (int i = 0; i < 1000; i++)
         linkedList.add(count-1,(int) (Math.random() * count));
         System.out.printf("LinkedList add in the end :%d|", System.currentTimeMillis() - time10);
 
         // ArrayList add in middle
         long time11 = System.currentTimeMillis();
-        arrayList.add((int) (Math.random() * (count-3) + 1),(int) (Math.random() * count));
-        System.out.printf("ArrayList add in middle :%d|", System.currentTimeMillis() - time11);
+        for (int i = 0; i < 1000; i++)
+            arrayList.add((int) (Math.random() * (count-3) + 1),(int) (Math.random() * count));
+            System.out.printf("ArrayList add in middle :%d|", System.currentTimeMillis() - time11);
 
         // LinkedList add in middle
         long time12 = System.currentTimeMillis();
-        linkedList.add((int) (Math.random() * (count-3) + 1),(int) (Math.random() * count));
-        System.out.printf("LinkedList add in middle :%d|", System.currentTimeMillis() - time12);
+        for (int i = 0; i < 1000; i++)
+            linkedList.add((int) (Math.random() * (count-3) + 1),(int) (Math.random() * count));
+            System.out.printf("LinkedList add in middle :%d|", System.currentTimeMillis() - time12);
     }
 
 
 
 }
+

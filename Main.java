@@ -1,30 +1,80 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.LinkedList;
-
+import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
         int count = 100_000;
         List<Integer> arrayList = new ArrayList<>();
         List<Integer> linkedList = new LinkedList<>();
+        // ArrayList.add
         long time = System.currentTimeMillis();
         for (int i = 0; i < count; i++)
         {arrayList.add(i);}
 
-        System.out.println( System.currentTimeMillis() - time);
-
+        {System.out.printf("ArrayList.add :%d|", System.currentTimeMillis() - time);}
+        // LinkedList.add
         long time1 = System.currentTimeMillis();
         for (int i = 0; i < count; i++)
         {linkedList.add(i);}
+        {System.out.printf("LinkedList.add :%d|", System.currentTimeMillis() - time1);}
 
-        System.out.println( System.currentTimeMillis() - time1);
-
+        // ArrayList.get
         long time3 = System.currentTimeMillis();
         for (int i = 0; i < count; i++)
         {arrayList.get(i);
 
         }
-        System.out.println(System.currentTimeMillis() - time3);
+        {System.out.printf("ArrayList Sequental access :%d|", System.currentTimeMillis() - time3);}
+        // LinkedList.get
+        long time4 = System.currentTimeMillis();
+        for (int i = 0; i < count; i++)
+        {arrayList.get(i);}
+        {System.out.printf("linkedList Sequental access :%d|", System.currentTimeMillis() - time4);}
 
+        // ArrayList random access
+        long time5 = System.currentTimeMillis();
+        for (int i = 0; i < count; i++)
+        {arrayList.get((int) (Math.random() * count));}
+        System.out.printf("ArrayList random access :%d|", System.currentTimeMillis() - time5);
+
+        // LinkedList random access
+        long time6 = System.currentTimeMillis();
+        for (int i = 0; i < count; i++)
+        {linkedList.get((int) (Math.random() * count));}
+        System.out.printf("linkedList random access :%d|", System.currentTimeMillis() - time6);
+
+        // ArrayList add First
+        long time7 = System.currentTimeMillis();
+        arrayList.add(0,(int) (Math.random() * count));
+        System.out.printf("ArrayList add First :%d|", System.currentTimeMillis() - time7);
+
+        // LinkedList add.First
+        long time8 = System.currentTimeMillis();
+        linkedList.add(0,(int) (Math.random() * count));
+        System.out.printf("LinkedList add First :%d|", System.currentTimeMillis() - time8);
+
+        // ArrayList add in the end
+        long time9 = System.currentTimeMillis();
+        arrayList.add(count-1,(int) (Math.random() * count));
+        System.out.printf("ArrayList add in the end :%d|", System.currentTimeMillis() - time9);
+
+        // LinkedList add in the end
+        long time10 = System.currentTimeMillis();
+        linkedList.add(count-1,(int) (Math.random() * count));
+        System.out.printf("LinkedList add in the end :%d|", System.currentTimeMillis() - time10);
+
+        // ArrayList add in middle
+        long time11 = System.currentTimeMillis();
+        arrayList.add((int) (Math.random() * (count-3) + 1),(int) (Math.random() * count));
+        System.out.printf("ArrayList add in middle :%d|", System.currentTimeMillis() - time11);
+
+        // LinkedList add in middle
+        long time12 = System.currentTimeMillis();
+        linkedList.add((int) (Math.random() * (count-3) + 1),(int) (Math.random() * count));
+        System.out.printf("LinkedList add in middle :%d|", System.currentTimeMillis() - time12);
     }
+
+
+
 }
